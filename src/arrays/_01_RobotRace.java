@@ -27,13 +27,32 @@ for(int i = 0; i<rob.length;i++) {
 	//   a random amount less than 50.
 while(rob[0].getY()>0&&rob[1].getY()>0&&rob[2].getY()>0&&rob[3].getY()>0&&rob[4].getY()>0) {
 for(int i =0;i<5;i++) {
+	
+	rob[i].setSpeed(25);
 	Random ran= new Random();
 	
 	int g = ran.nextInt(50);
 	
 	
-		if(rob[i].getY()>0) {
+	
+		
 			rob[i].move(g);
+		if(rob[i].getY()<=0) {
+			rob[i].sparkle();
+			
+			
+			for(int j = 0; j<10; j++) {
+				
+			rob[i].turn(36);
+			rob[i].move(20);
+		}
+			for(int j = 0; j<10; j++) {
+				
+				rob[i].turn(-36);
+				rob[i].move(20);
+			
+			}
+			break;
 		}
 		
 	
